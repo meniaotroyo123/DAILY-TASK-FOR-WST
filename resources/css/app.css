@@ -1,0 +1,218 @@
+
+@import "tailwindcss";
+
+/* ===== Green Daily Tasks Theme ===== */
+
+:root {
+    --dark-green: #14532d;
+    --green: #16a34a;
+    --bright-green: #22c55e;
+    --light-green: #dcfce7;
+    --mint: #f0fdf4;
+    --white: #ffffff;
+    --text: #17231a;
+    --muted: #647067;
+    --border: #bbf7d0;
+    --red: #dc2626;
+}
+
+/* Page */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #f0fdf4, #ffffff);
+    color: var(--text);
+}
+
+/* Main container */
+.container {
+    width: min(1000px, 90%);
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 25px 30px;
+    background: var(--dark-green);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(20, 83, 45, 0.15);
+}
+
+.header h1 {
+    margin: 0;
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.header h1::before {
+    content: "🌿 ";
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    padding: 10px 17px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 14px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--bright-green);
+}
+
+.btn-secondary {
+    background: var(--light-green);
+    color: var(--dark-green);
+}
+
+.btn-secondary:hover {
+    background: #bbf7d0;
+}
+
+.danger {
+    background: #fee2e2;
+    color: var(--red);
+}
+
+.danger:hover {
+    background: #fecaca;
+}
+
+/* Task cards */
+.card {
+    background: white;
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 18px rgba(20, 83, 45, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: var(--green);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--dark-green);
+    font-size: 22px;
+}
+
+.card p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.card strong {
+    color: var(--text);
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.actions form {
+    margin: 0;
+}
+
+/* Success message */
+.success {
+    background: var(--light-green);
+    color: var(--dark-green);
+    border: 1px solid #86efac;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Empty state */
+.card:has(p:only-child) {
+    text-align: center;
+    padding: 40px;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .container {
+        width: 92%;
+        padding: 25px 0;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions .btn,
+    .actions form,
+    .actions form button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
