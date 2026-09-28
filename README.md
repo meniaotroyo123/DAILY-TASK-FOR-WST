@@ -1,84 +1,58 @@
-# Daily Tasks - WST
+# Daily Task Manager
 
-A simple Laravel-based Task Management System developed for WST.
+A simple Laravel web application for managing daily tasks and keeping track of their progress.
+
+## Project Code
+
+WST21-PM-2026-SF
+
+## Student Name
+
+Jetro Meniao
+
+## Course & Year
+
+BSIT 2nd Year
+
+## Database Used
+
+SQLite
 
 ## Features
 
-* Add new tasks
-* View all tasks
-* View task details
-* Edit existing tasks
-* Delete tasks
-* Update task status
-* Set task due dates
-* Simple and clean green-themed interface
+- Add Task
+- View Tasks
+- Edit Tasks
+- Delete Tasks
+- Set Due Date
+- Update Task Status
 
-## Task Information
+## How It Works
 
-Each task contains:
+### 1. View Tasks
 
-* **Task Name**
-* **Description**
-* **Status** — Pending or Completed
-* **Due Date**
+![View Tasks](screenshots/view.png)
 
-## Technologies Used
+The main page shows all saved tasks along with their description, current status, and due date.
 
-* Laravel
-* PHP
-* MySQL
-* Blade
-* CSS
-* Vite
-* Git & GitHub
+### 2. Add a Task
 
-## Database
+![Add Task](screenshots/add.png)
 
-The project uses a `tasks` table with the following fields:
+Select **Add Task** and provide the task name, description, status, and due date. Save the form to add the new task.
 
-* `id`
-* `task_name`
-* `description`
-* `status`
-* `due_date`
-* `created_at`
-* `updated_at`
+### 3. Edit a Task
 
-## Running the Project
+![Edit Task](screenshots/edit.png)
 
-1. Install the project dependencies:
+Choose **Edit** beside a task to modify its details, such as the task name, description, status, or due date.
 
-```bash
-composer install
-npm install
-```
+### 4. Update Task Status
 
-2. Create your `.env` file and configure the database.
+The task status can be changed between **Pending** and **Completed** when editing a task.
 
-3. Run the database migrations:
+### 5. Delete a Task
 
-```bash
-php artisan migrate
-```
+![Delete Task](screenshots/delete.png)
 
-4. Start the Laravel development server:
-
-```bash
-php artisan serve
-```
-
-5. Start Vite:
-
-```bash
-npm run dev
-```
-
-6. Open the application in your browser at:
-
-```text
-http://127.0.0.1:8000
-```
-
-## Project Purpose
-
-This project was created as a Web Systems and Technologies (WST) activity to demonstrate basic Laravel CRUD operations, database integration, routing, Blade views, and frontend styling.
+Select **Delete** to remove a task that is no longer needed.
